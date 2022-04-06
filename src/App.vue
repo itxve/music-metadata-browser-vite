@@ -1,12 +1,21 @@
 <script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import HelloWorld from './components/HelloWorld.vue'
+import { onMounted } from "vue";
+import { parseBlob } from "music-metadata-browser";
+
+onMounted(() => {
+  const fileInput = document.querySelector("#fe");
+  fileInput?.addEventListener("change", function (e) {
+    const feDom = e.target as any;
+    console.log(" e.files[0];", feDom.files?.[0]);
+    parseBlob(feDom.files?.[0]).then((res) => {
+      console.log(res);
+    });
+  });
+});
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <input id="fe" type="file" />
 </template>
 
 <style>
