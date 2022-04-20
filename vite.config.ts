@@ -6,5 +6,8 @@ export default defineConfig({
   define: {
     global: "window",
   },
+  build: {
+    outDir: "docs",
+  },
   plugins: [vue()],
 });
