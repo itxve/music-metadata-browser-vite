@@ -8,11 +8,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "events": "^3.3.0",
     "music-metadata-browser": "^2.5.6",
     "vue": "^3.2.25"
   },
   "devDependencies": {
+    "@esbuild-plugins/node-globals-polyfill": "^0.1.1",
+    "@esbuild-plugins/node-modules-polyfill": "^0.1.4",
     "@types/node": "^17.0.23",
     "@vitejs/plugin-vue": "^2.3.0",
     "typescript": "^4.5.4",
