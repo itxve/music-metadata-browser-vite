@@ -5,7 +5,7 @@ import { parseBlob } from "music-metadata-browser";
 
 <script setup lang="ts">
 const commonRef = ref();
-const imgLick = (blob: Blob) => {
+const imgLick = (blob: any) => {
   const b = new Blob([blob.data], { type: blob.format });
   return URL.createObjectURL(b);
 };
@@ -27,7 +27,7 @@ onMounted(() => {
 <template>
   <input id="fe" type="file" />
   <div class="music">
-    <h1>music-metadata</h1>
+    <h2>music-metadata</h2>
     <div>
       title: <span>{{ commonRef?.title }}</span>
     </div>
